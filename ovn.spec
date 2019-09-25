@@ -63,7 +63,9 @@ Source: https://www.openvswitch.org/releases/openvswitch-%{version}.tar.gz
 # OVN (including OVS if required) backports (0 - 399)
 
 # Address crpto policy for fedora
+%if 0%{?fedora}
 Patch1: 0001-fedora-Use-PROFILE-SYSTEM-in-SSL_CTX_set_cipher_list.patch
+%endif
 Patch2: 0001-downstream-only-Change-the-version-from-2.11.90-to-2.patch
 
 BuildRequires: gcc autoconf automake libtool
