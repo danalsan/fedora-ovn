@@ -68,7 +68,9 @@ Source10: https://openvswitch.org/releases/openvswitch-%{ovsver}.tar.gz
 
 # OpenvSwitch backports (400-) if required.
 # Address crpto policy for fedora
+%if 0%{?fedora}
 Patch400: 0001-fedora-Use-PROFILE-SYSTEM-in-SSL_CTX_set_cipher_list.patch
+%endif
 
 BuildRequires: gcc autoconf automake libtool
 BuildRequires: systemd openssl openssl-devel
